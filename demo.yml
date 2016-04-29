@@ -4,12 +4,20 @@
   tasks:
     - include: roles/role/tasks/copy.yml
       ignore_errors: true
+# Ignore errors does not work on 1.9.x for includes, this fails as role_path is undefined
+    - include: roles/role/tasks/copy_with_role_path.yml
+      ignore_errors: true
+      when: ansible_version.major == 2
   connection: local
 
 - hosts: localhost
   tasks:
     - include: roles/role/tasks/copy.yml
       ignore_errors: true
+#Ignore errors does not work on 1.9.x for includes, this fails as role_path is undefined
+    - include: roles/role/tasks/copy_with_role_path.yml
+      ignore_errors: true
+      when: ansible_version.major == 2
   connection: local
 
 - hosts: localhost
