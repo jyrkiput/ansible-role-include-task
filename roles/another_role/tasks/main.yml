@@ -1,0 +1,4 @@
+- include: ../../role/tasks/copy.yml
+  ignore_errors: true
+
+- include: ../../role/tasks/copy_with_role_path.yml

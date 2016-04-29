@@ -1,0 +1,5 @@
+- name: create file
+  copy: src=file dest=/tmp/file
+
+- name: create file with relative path
+  copy: src=../files/file dest=/tmp/file

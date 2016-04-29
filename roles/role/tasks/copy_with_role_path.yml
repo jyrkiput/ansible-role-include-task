@@ -1,0 +1,3 @@
+- name: create file with role path
+  copy: src={{role_path}}/files/file dest=/tmp/file
+  ignore_errors: true

@@ -1,0 +1,18 @@
+- hosts: localhost
+  roles:
+    - role
+  tasks:    
+      include: roles/role/tasks/copy.yml
+      ignore_errors: true
+  connection: local
+
+- hosts: localhost
+  tasks:
+    - include: roles/role/tasks/copy.yml
+      ignore_errors: true
+  connection: local
+
+- hosts: localhost
+  roles:
+    - another_role
+  connection: local
